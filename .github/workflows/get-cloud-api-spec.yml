@@ -1,4 +1,4 @@
-name: Fetch and Save Cloud API Spec
+name: Fetch and Save Cloud API Specm
 
 on:
   workflow_dispatch: # Allows manual trigger of the workflow
