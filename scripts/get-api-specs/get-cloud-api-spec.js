@@ -1,4 +1,6 @@
-const { Octokit } = require("@octokit/rest");
+const { Octokit } = require("@octokit/rest")({
+  log: console,
+});
 const { retry } = require("@octokit/plugin-retry");
 const yaml = require('js-yaml');
 const OctokitWithRetries = Octokit.plugin(retry);
@@ -35,6 +37,7 @@ async function fetchYamlFile() {
     console.log(content);
   } catch (error) {
     console.error('Error fetching file: ' + error.message);
+    process.exit(1)
   }
 }
 
